@@ -1,15 +1,20 @@
+<%# 全てのページのテンプレートになる部分(=App.vue) %>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SampleApp</title>
-    <%= csrf_meta_tags %>
+    <title> <%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+    <%# CSRF対策 %>w
+    <%= csrf_meta_tags %> 
     <%= csp_meta_tag %>
-
+    <%# スタイルシートの展開 %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# JSの展開 %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%# 各ページの内容がここに挿入される %>
+    <%= yield  %>
+    
   </body>
 </html>
