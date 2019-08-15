@@ -1,20 +1,11 @@
-<%# 全てのページのテンプレートになる部分(=App.vue) %>
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> <%= full_title(yield(:title)) %> </title>
-    <%# CSRF対策 %>w
-    <%= csrf_meta_tags %> 
-    <%= csp_meta_tag %>
-    <%# スタイルシートの展開 %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%# JSの展開 %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+  <%= render 'layouts/rails_default' %>
   <body>
-    <%# 各ページの内容がここに挿入される %>
-    <%= yield  %>
-    
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
