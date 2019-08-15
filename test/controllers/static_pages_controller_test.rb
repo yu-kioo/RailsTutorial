@@ -12,7 +12,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get static_pages_home_url
     assert_response :success
     # htmlのタグ内に指定文字列が存在するか
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
 	end
 
 	test 'should get help' do
