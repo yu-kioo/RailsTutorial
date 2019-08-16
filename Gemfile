@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'bootsnap', require: false
+gem 'bcrypt'
 
 group :development, :test do
   gem 'sqlite3'

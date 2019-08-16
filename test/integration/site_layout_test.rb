@@ -1,3 +1,5 @@
+# 統合テスト：ページ間の遷移テスト
+
 require 'test_helper'
 
 class SiteLayoutTest < ActionDispatch::IntegrationTest
