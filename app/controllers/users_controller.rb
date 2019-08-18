@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     # @user = User.new(params[:user])
     @user = User.new(user_params)
     if @user.save # 登録成功したら
+      log_in(@user) # ログインしとく
       flash[:success] = "Welcome to the sample App!" # redirect先でwelcomeメッセを１回だけ表示
       # 新規userページへリダイレクト
       redirect_to @user # = redirect_to user_url(@user)

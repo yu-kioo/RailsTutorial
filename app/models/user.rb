@@ -15,4 +15,12 @@ class User < ApplicationRecord
   # passのhash化
   has_secure_password
   validates(:password, presence: true, length: {minimum: 6})
+
+  # 渡された文字列のhashを返す
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : 
+                                                  BCrypt::Engine.cost 
+    
+    BCrypt::Password.create(string, cost: cost)
+  end
 end
